@@ -1,0 +1,24 @@
+{
+  "name": "YourServiceServer",
+  "version": "0.0.1",
+  "description": "At your service.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tctony/YourServiceServer.git"
+  },
+  "keywords": [],
+  "author": "Tony Tang <tangchang21@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tctony/YourServiceServer/issues"
+  },
+  "homepage": "https://github.com/tctony/YourServiceServer#readme",
+  "dependencies": {
+    "crawler": "^0.4.3",
+    "node-schedule": "^0.6.0"
+  }
+}
