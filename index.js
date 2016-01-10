@@ -2,12 +2,15 @@
 
 var schedule = require('node-schedule');
 var crawler = require('./Crawler');
+var data = require('./Data');
 
 var j = schedule.scheduleJob('* * * * *', function() {
-  crawler.tieba.fetchPinnedPosts('万古至尊', function(list) {
-    console.log(list);
+  crawler.tieba.fetchPinnedPosts('万古至尊', function(tieba, posts) {
+    data.tiebaPinnedPost.update(tieba, posts, function(newpost) {
+    });
   });
-  crawler.tieba.fetchPinnedPosts('大主宰', function(list) {
-    console.log(list);
+  crawler.tieba.fetchPinnedPosts('大主宰', function(tieba, posts) {
+    data.tiebaPinnedPost.update(tieba, posts, function(newpost) {
+    });
   });
 });
