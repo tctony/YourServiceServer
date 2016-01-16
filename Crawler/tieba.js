@@ -41,7 +41,7 @@ Tieba.prototype.fetchPinnedPosts = function(name, callback) {
         });
 
       console.log("Done for " + name);
-      callback(name, postList);
+      callback(name, postList.reverse());
       return;
     }
   });
