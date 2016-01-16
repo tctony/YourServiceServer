@@ -15,10 +15,13 @@ function sendPushToApple(message, payload) {
   pushMessage.badge = 1;
   pushMessage.sound = 'default';
   pushMessage.alert = message;
+  pushMessage.category= 'uri';
   if (payload) {
     pushMessage.payload = payload;
   }
 
+  console.log('sendomg message to apple:');
+  console.log(pushMessage);
   apnConnection.pushNotification(pushMessage, device);
 }
 

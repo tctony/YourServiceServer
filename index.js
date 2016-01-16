@@ -9,13 +9,18 @@ var j = schedule.scheduleJob('* * * * *', function() {
   crawler.tieba.fetchPinnedPosts('万古至尊', function(tieba, posts) {
     data.tiebaPinnedPost.update(tieba, posts, function(newpost) {
       var message = tieba + '有更新: ' + newpost.title;
-      push.send(message);
+      push.send(message, {
+        uri: newpost.link
+      });
     });
   });
   crawler.tieba.fetchPinnedPosts('大主宰', function(tieba, posts) {
     data.tiebaPinnedPost.update(tieba, posts, function(newpost) {
       var message = tieba + '有更新: ' + newpost.title;
-      push.send(message);
+      push.send(message, {
+        uri: newpost.link
+      });
     });
   });
 });
+
