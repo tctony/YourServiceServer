@@ -3,7 +3,8 @@
 var Apn = require('apn');
 
 var options = {
-  'pfx': 'private/YourServicePush.p12'
+  production: false,
+  pfx: 'private/YourServicePush.p12'
 };
 var apnConnection = new Apn.Connection(options);
 
