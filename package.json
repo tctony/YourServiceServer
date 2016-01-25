@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node index.js",
     "clear": "node Data/clear.js",
-    "test": "node test.js"
+    "test": "node test.js",
+    "dd": "pm2 deploy package.json dev",
+    "dp": "pm2 deploy package.json production"
   },
   "repository": {
     "type": "git",
