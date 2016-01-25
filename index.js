@@ -1,9 +1,9 @@
 'use strict';
 
 var schedule = require('node-schedule');
-var crawler = require('./Crawler');
-var data = require('./Data');
-var push = require('./Push');
+var crawler = require('./crawler');
+var data = require('./data');
+var push = require('./push');
 
 var j = schedule.scheduleJob('* * * * *', function() {
   crawler.tieba.fetchPinnedPosts('万古至尊', function(tieba, posts) {
