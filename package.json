@@ -22,10 +22,11 @@
   "dependencies": {
     "apn": "^1.7.5",
     "crawler": "^0.4.3",
+    "log4js": "^0.6.29",
+    "log4js-node-mongodb": "^1.0.0",
     "mongodb": "^2.1.3",
     "node-schedule": "^0.6.0"
   },
-
   "apps": [{
     "name": "YourService",
     "script": "index.js",
@@ -43,7 +44,7 @@
       "ref": "origin/master",
       "repo": "~/git/YourServiceServer.git",
       "path": "~/YourService",
-      "pre-deploy-local" : "rsync -r private tctony@tctony.xyz:/home/tctony/YourService/source",
+      "pre-deploy-local": "rsync -r private tctony@tctony.xyz:/home/tctony/YourService/source",
       "post-deploy": "npm install ; pm2 startOrRestart package.json --env production"
     },
     "dev": {
@@ -52,7 +53,7 @@
       "ref": "origin/master",
       "repo": "~/Develop/YourService/Server/.git",
       "path": "~/tmp/YourService",
-      "pre-deploy-local" : "rsync -r private /Users/tony/tmp/YourService/source",
+      "pre-deploy-local": "rsync -r private /Users/tony/tmp/YourService/source",
       "post-deploy": "npm install ; pm2 startOrRestart package.json --env dev",
       "env": {
         "NODE_ENV": "dev"
