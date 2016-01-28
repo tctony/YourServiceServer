@@ -9,7 +9,7 @@ var options = {
 var apnConnection = new Apn.Connection(options);
 
 var callbacks = {};
-apnConnection.on('transmitted', function (notification, devcie) {
+apnConnection.on('transmitted', function(notification, devcie) {
   var c = callbacks[notification];
   if (typeof c === 'function') {
     c();
@@ -25,7 +25,8 @@ function sendPushToApple(message, payload, callback) {
   notification.badge = 1;
   notification.sound = 'default';
   notification.alert = message;
-  notification.category= 'uri';
+  notification.category = 'uri';
+  // notification.contentAvailable = true;
   if (payload) {
     notification.payload = payload;
   }
