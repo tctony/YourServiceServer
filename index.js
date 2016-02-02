@@ -5,7 +5,8 @@ var crawler = require('./crawler');
 var data = require('./data');
 var push = require('./push');
 
-var j = schedule.scheduleJob('* * * * *', function() {
+// every 5 minute
+var j = schedule.scheduleJob('0 */5 * * * *', function() {
   crawler.tieba.fetchPinnedPosts('万古至尊', function(tieba, posts) {
     data.tiebaPinnedPost.update(tieba, posts, function(newpost) {
       var message = tieba + '有更新: ' + newpost.title;
