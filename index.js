@@ -1,5 +1,7 @@
 'use strict';
 
+require('./logger.js');
+
 var schedule = require('node-schedule');
 var crawler = require('./crawler');
 var data = require('./data');
