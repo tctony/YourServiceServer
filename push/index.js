@@ -18,7 +18,7 @@ apnConnection.on('transmitted', function(notification, devcie) {
 });
 
 var device = new Apn.Device(
-  '455eed6dbe7c86bc7892547fb9e7803d669b86f0ffad8fb13a6251d739f1c9c0');
+  '5dcb90b61d1776a6f45d121b8bcb1f9154b0f2916d15570d10c08d3e91333590');
 
 function sendPushToApple(message, payload, callback) {
   var notification = new Apn.notification();
