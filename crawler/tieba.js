@@ -29,6 +29,7 @@ Tieba.prototype.fetchPinnedPosts = function(name, callback) {
         callback();
         return;
       }
+
       var postList = new Array();
       $('.threadlist_title a', toplist)
         .each(function(index, a) {
@@ -48,3 +49,4 @@ Tieba.prototype.fetchPinnedPosts = function(name, callback) {
 };
 
 module.exports = Tieba;
+

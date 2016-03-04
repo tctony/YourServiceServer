@@ -12,11 +12,12 @@ var crawler = new Crawler();
 var Tieba = require('../tieba.js');
 var tieba = new Tieba(crawler);
 
-tieba.fetchPinnedPosts(arguements[2], function(postList) {
+tieba.fetchPinnedPosts(arguements[2], function(name, postList) {
   if (postList) {
     console.log(postList);
     process.exit(0);
   } else {
+    console.log('no posts');
     process.exit(1);
   }
 });
